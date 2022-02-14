@@ -1,0 +1,24 @@
+body {
+    background-color: black;
+    margin: 0;
+}
+
+.container {
+    height: 500px;
+    position: relative;
+    text-align: center;
+  }
+  
+h1 {
+    color: white;
+    top: 40%;
+    position: absolute;
+    left: 50%;
+    -ms-transform: translate(-50%, -40%);
+    transform: translate(-50%, -40%);
+
+    font-family: "system-ui";
+    letter-spacing: 4px;
+    font-size: 60px;
+    font-weight: 200;
+}
