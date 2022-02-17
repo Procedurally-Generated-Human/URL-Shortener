@@ -8,12 +8,18 @@
     <h1>URL SHORTNER</h1>
     <div class="container-2">
         <div class="search-box">
-            <input type="text" class="search-input" placeholder="Enter URL">
-            <button class="search-button">
-                GO
-            </button>
+            <input type="text" id="url-text" class="search-input" placeholder="Enter URL">
+            <input type="button
+            " class="search-button" id="submit-url">GO</input>
         </div>
     </div>
 </div> 
+
+<script>
+    document.querySelector('#submit-url').onclick = function(e) {
+        var url_name = document.querySelector('#url-text').value;
+        window.location.pathname = '/create/' + url_name + '/';      
+    };
+</script>
 
 {% endblock %}
