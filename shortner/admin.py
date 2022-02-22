@@ -1,3 +1,4 @@
 from django.contrib import admin
+from shortner.models import UrlLink
 
-# Register your models here.
+admin.site.register(UrlLink)
