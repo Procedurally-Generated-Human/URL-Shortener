@@ -1,2 +1,4 @@
 # URL-Shortener
-A URL Shortener Made With Django
+Converts urls into a 6 combinition of 6 letters and digits.
+Made with Django.  
+[Work in Progress]
