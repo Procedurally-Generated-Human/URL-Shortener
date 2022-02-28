@@ -1,17 +1,27 @@
 {% extends 'base.html' %}
 
-{% block title %}URL SHORTNER{% endblock %}
+{% block title %}URL SHORTENER{% endblock %}
 
 {% block content %}
 
 <div class="container">
-    <h1>URL SHORTNER</h1>
+    <h1>URL SHORTENER</h1>
     <div class="container-2">
         <form action="" method="post">
             {% csrf_token %}
             {{ form }}
-            <input type="submit" value="Submit">
+            <input type="submit" value="Shorten">
         </form>
+        
+            {% if not original_url %}
+            {% else %}
+                <div class="result">
+                    <p>{{ original_url }}</p>
+                    <p>↓</p>
+                    <p>{{ short_url }}</p>
+                </div>
+            {% endif %}
+
     </div>
 </div> 
 

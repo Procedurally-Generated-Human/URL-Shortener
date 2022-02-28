@@ -12,8 +12,8 @@ def home(request):
             new_link.short_url = form.generate_short_url(new_link.original_url)
             new_link.save()
 
-            return redirect('home')
-            
+            form = UrlForm()
+            return render(request, 'home.html', {'form':form, 'short_url':new_link.short_url, 'original_url':new_link.original_url})
     else:
         form = UrlForm()
     return render(request, 'home.html', {'form':form})
@@ -21,6 +21,5 @@ def home(request):
 
 def redirect_to_link(request, shrt_url):
     relation = get_object_or_404(UrlLink, short_url = shrt_url)
-    website = relation.original_url
-    redirect_url = "http://" + website + "/"
+    redirect_url = relation.original_url
     return redirect(redirect_url)
